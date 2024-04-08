@@ -10,7 +10,7 @@ const Footer = () => {
   const loginState = useSelector((state) => state.auth.isLoggedIn);
   return (
     <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-10 max-md:px-0">
-      <nav className="grid grid-flow-col max-sm:grid-flow-row gap-4">
+      {/*<nav className="grid grid-flow-col max-sm:grid-flow-row gap-4">
         <Link
           to="/"
           className="link link-hover text-2xl max-md:text-xl text-accent-content"
@@ -57,17 +57,25 @@ const Footer = () => {
             </Link>
           </>
         )}
-      </nav>
+      </nav>*/}
       <nav>
         <div className="grid grid-flow-col gap-4">
-          <FaSquareXTwitter className="text-6xl max-sm:text-4xl text-accent-content" />
-          <FaSquareFacebook className="text-6xl max-sm:text-4xl text-accent-content" />
-          <FaSquareInstagram className="text-6xl max-sm:text-4xl text-accent-content" />
-          <FaSquareYoutube className="text-6xl max-sm:text-4xl text-accent-content" />
+          <Link to={"https://x.com"} target="_blank">
+            <FaSquareXTwitter className="text-5xl max-sm:text-4xl text-accent-content hover:cursor-pointer" />
+          </Link>
+          <Link to={"https://fb.com"} target="_blank">
+            <FaSquareFacebook className="text-5xl max-sm:text-4xl text-accent-content hover:cursor-pointer" />
+          </Link>
+          <Link to={"https://instagram.com"} target="_blank">
+            <FaSquareInstagram className="text-5xl max-sm:text-4xl text-accent-content hover:cursor-pointer" />
+          </Link>
+          <Link to={"https://youtube.com"} target="_blank">
+            <FaSquareYoutube className="text-5xl max-sm:text-4xl text-accent-content hover:cursor-pointer" />
+          </Link>
         </div>
       </nav>
       <aside>
-        <p className="text-2xl max-sm:text-sm text-accent-content">
+        <p className="text-xl max-sm:text-sm text-accent-content">
           Copyright © 2023 - All right reserved by EchoStore
         </p>
       </aside>
