@@ -41,7 +41,6 @@ const ThankYou = () => {
     }
   }, []);
 
-
   return (
     <>
       <SectionTitle title="Thank You" path="Home | Cart | Thank you" />
@@ -73,7 +72,7 @@ const ThankYou = () => {
           Thank you again for your purchase!
         </h4>
         <h4 className="text-xl max-sm:text-lg">
-          Sincerely, The Kuzma Clothing & Shoes team
+          Sincerely, The EchoStore team
         </h4>
       </div>
     </>
