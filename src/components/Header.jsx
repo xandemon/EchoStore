@@ -54,36 +54,113 @@ const Header = () => {
 
   return (
     <>
-      <div className="topbar border-b border-gray-800">
-        <ul>
-          <li>
-            <FaHeadphones className="text-2xl max-sm:text-lg text-accent-content" />
-            <span className="text-2xl max-sm:text-lg text-accent-content">
-              +381 61/123-456
-            </span>
-          </li>
-          <li>
-            <FaRegEnvelope className="text-2xl max-sm:text-lg text-accent-content" />{" "}
-            <span className="text-2xl max-sm:text-lg text-accent-content">
-              support@test.com
-            </span>
-          </li>
-        </ul>
-      </div>
-      <div className="navbar bg-base-100 max-w-7xl mx-auto">
-        <div className="flex-1">
-          <Link
-            to="/"
-            className="btn btn-ghost normal-case text-2xl font-black text-accent-content"
-          >
-            <AiFillShopping />
-            EchoStore
-          </Link>
+      <div className="flex items-center justify-between gap-5 bg-base-100 w-full max-w-7xl mx-auto">
+        <Link
+          to="/"
+          className="btn btn-ghost normal-case text-2xl font-black text-red-500"
+        >
+          <AiFillShopping />
+          EchoStore
+        </Link>
+
+        <div className="navbar-bottom-menu border-y border-gray-800">
+          <div className="drawer">
+            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content">
+              {/* Page content here */}
+              <label htmlFor="my-drawer" className="btn drawer-button">
+                <HiMiniBars3BottomLeft className="text-4xl" />
+              </label>
+            </div>
+            <div className="drawer-side z-10">
+              <label
+                htmlFor="my-drawer"
+                aria-label="close sidebar"
+                className="drawer-overlay"
+              ></label>
+
+              <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content mt-4">
+                <label htmlFor="my-drawer" className="btn drawer-button">
+                  <FaWindowClose className="text-3xl ml-auto" />
+                </label>
+                {/* Sidebar content here */}
+                <li>
+                  <NavLink className="text-accent-content" to="/">
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="text-accent-content" to="/shop">
+                    Shop
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="text-accent-content" to="/about-us">
+                    About us
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="text-accent-content" to="/contact">
+                    Contact
+                  </NavLink>
+                </li>
+                {!isLoggedIn && (
+                  <>
+                    <li>
+                      <NavLink className="text-accent-content" to="/login">
+                        Login
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="text-accent-content" to="/register">
+                        Register
+                      </NavLink>
+                    </li>
+                  </>
+                )}
+              </ul>
+            </div>
+          </div>
+
+          <div className="container text-2xl navlinks-container [&>a]:text-lg [&>a.active]:text-red-500 [&>a.active]:font-semibold">
+            <NavLink className="text-accent-content hover:text-blue-400" to="/">
+              Home
+            </NavLink>
+            <NavLink
+              className="text-accent-content hover:text-blue-400"
+              to="/shop"
+            >
+              Shop
+            </NavLink>
+            <NavLink
+              className="text-accent-content hover:text-blue-400"
+              to="/about-us"
+            >
+              About us
+            </NavLink>
+            <NavLink
+              className="text-accent-content hover:text-blue-400"
+              to="/contact"
+            >
+              Contact
+            </NavLink>
+            {!isLoggedIn && (
+              <>
+                <NavLink className="text-accent-content" to="/login">
+                  Login
+                </NavLink>
+                <NavLink className="text-accent-content" to="/register">
+                  Register
+                </NavLink>
+              </>
+            )}
+          </div>
         </div>
+
         <div className="flex-none">
           <Link
             to="/search"
-            className="btn btn-ghost btn-circle text-accent-content"
+            className="btn btn-ghost btn-circle text-accent-content hover:text-blue-400"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -101,20 +178,20 @@ const Header = () => {
             </svg>
           </Link>
           <button
-            className="text-accent-content btn btn-ghost btn-circle text-xl"
+            className="text-accent-content btn btn-ghost btn-circle text-xl hover:text-blue-400"
             onClick={() => dispatch(changeMode())}
           >
             {darkMode ? <FaSun /> : <FaMoon />}
           </button>
           <Link
             to="/wishlist"
-            className="btn btn-ghost btn-circle text-accent-content"
+            className="btn btn-ghost btn-circle text-accent-content hover:text-blue-400"
           >
             <FaHeart className="text-xl" />
           </Link>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
-              <div className="indicator">
+              <div className="indicator hover:text-blue-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -184,91 +261,6 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-          )}
-        </div>
-      </div>
-
-      <div className="navbar-bottom-menu border-y border-gray-800">
-        <div className="drawer">
-          <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content">
-            {/* Page content here */}
-            <label htmlFor="my-drawer" className="btn drawer-button">
-              <HiMiniBars3BottomLeft className="text-4xl" />
-            </label>
-          </div>
-          <div className="drawer-side z-10">
-            <label
-              htmlFor="my-drawer"
-              aria-label="close sidebar"
-              className="drawer-overlay"
-            ></label>
-
-            <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content mt-4">
-              <label htmlFor="my-drawer" className="btn drawer-button">
-                <FaWindowClose className="text-3xl ml-auto" />
-              </label>
-              {/* Sidebar content here */}
-              <li className="text-xl">
-                <NavLink className="text-accent-content" to="/">
-                  Home
-                </NavLink>
-              </li>
-              <li className="text-xl">
-                <NavLink className="text-accent-content" to="/shop">
-                  Shop
-                </NavLink>
-              </li>
-              <li className="text-xl">
-                <NavLink className="text-accent-content" to="/about-us">
-                  About us
-                </NavLink>
-              </li>
-              <li className="text-xl">
-                <NavLink className="text-accent-content" to="/contact">
-                  Contact
-                </NavLink>
-              </li>
-              {!isLoggedIn && (
-                <>
-                  <li className="text-xl">
-                    <NavLink className="text-accent-content" to="/login">
-                      Login
-                    </NavLink>
-                  </li>
-                  <li className="text-xl">
-                    <NavLink className="text-accent-content" to="/register">
-                      Register
-                    </NavLink>
-                  </li>
-                </>
-              )}
-            </ul>
-          </div>
-        </div>
-
-        <div className="container text-2xl navlinks-container">
-          <NavLink className="text-accent-content" to="/">
-            Home
-          </NavLink>
-          <NavLink className="text-accent-content" to="/shop">
-            Shop
-          </NavLink>
-          <NavLink className="text-accent-content" to="/about-us">
-            About us
-          </NavLink>
-          <NavLink className="text-accent-content" to="/contact">
-            Contact
-          </NavLink>
-          {!isLoggedIn && (
-            <>
-              <NavLink className="text-accent-content" to="/login">
-                Login
-              </NavLink>
-              <NavLink className="text-accent-content" to="/register">
-                Register
-              </NavLink>
-            </>
           )}
         </div>
       </div>
