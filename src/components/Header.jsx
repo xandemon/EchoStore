@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaHeadphones } from "react-icons/fa6";
-import { FaRegEnvelope } from "react-icons/fa6";
 import { HiMiniBars3BottomLeft } from "react-icons/hi2";
 import { FaHeart } from "react-icons/fa6";
 import { AiFillShopping } from "react-icons/ai";
@@ -23,7 +21,6 @@ const Header = () => {
   const { amount } = useSelector((state) => state.cart);
   const { total } = useSelector((state) => state.cart);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [id, setId] = useState(localStorage.getItem("id"));
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.auth);
 
