@@ -5,7 +5,7 @@ import { SectionTitle } from "../components";
 const Contact = () => {
   return (
     <>
-      <SectionTitle title="Contact Us" path="Home | Contact" />
+      {/* <SectionTitle title="Contact Us" path="Home | Contact" /> */}
       <div className="isolate px-6 lg:px-8">
         <Form
           action="#"
@@ -123,7 +123,9 @@ const Contact = () => {
                   aria-checked="false"
                   aria-labelledby="switch-1-label"
                 >
-                  <span className="sr-only text-accent-content">Agree to policies</span>
+                  <span className="sr-only text-accent-content">
+                    Agree to policies
+                  </span>
 
                   <span
                     aria-hidden="true"
@@ -131,10 +133,13 @@ const Contact = () => {
                   ></span>
                 </button>
               </div>
-              <label className="text-sm leading-6 text-accent-content" id="switch-1-label">
+              <label
+                className="text-sm leading-6 text-accent-content"
+                id="switch-1-label"
+              >
                 By selecting this, you agree to our
                 <a href="#" className="font-semibold text-blue-500">
-                &nbsp;privacy&nbsp;policy
+                  &nbsp;privacy&nbsp;policy
                 </a>
                 .
               </label>

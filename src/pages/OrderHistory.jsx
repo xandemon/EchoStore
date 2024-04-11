@@ -36,7 +36,7 @@ const OrderHistory = () => {
 
   return (
     <>
-      <SectionTitle title="Order History" path="Home | Order History" />
+      {/* <SectionTitle title="Order History" path="Home | Order History" /> */}
       <div className="order-history-main max-w-7xl mx-auto mt-10 px-20 max-md:px-10">
         {orders?.length === 0 ? (
           <div className="text-center">
@@ -79,17 +79,25 @@ const OrderHistory = () => {
                         {order.cartItems.map((product, counter) => (
                           <tr className="text-accent-content" key={nanoid()}>
                             <th>{counter + 1}</th>
-                            <th><img src={`https://${product.image}`} alt="" className="w-10" /></th>
+                            <th>
+                              <img
+                                src={`https://${product.image}`}
+                                alt=""
+                                className="w-10"
+                              />
+                            </th>
                             <td>{product.title}</td>
                             <td>{product.selectedSize}</td>
                             <td>{product.amount}</td>
-                            <td>${(product.price * product.amount).toFixed(2)}</td>
+                            <td>
+                              ${(product.price * product.amount).toFixed(2)}
+                            </td>
                           </tr>
                         ))}
                         <tr>
                           <td colSpan="5" className="text-center">
                             <h4 className="text-md text-accent-content">
-                              Subtotal: ${ Math.round(order?.subtotal) }
+                              Subtotal: ${Math.round(order?.subtotal)}
                             </h4>
                           </td>
                         </tr>
@@ -103,14 +111,18 @@ const OrderHistory = () => {
                         <tr>
                           <td colSpan="5" className="text-center">
                             <h3 className="text-md text-accent-content">
-                              Tax: 20%: ${ Math.round(order?.subtotal / 5) }
+                              Tax: 20%: ${Math.round(order?.subtotal / 5)}
                             </h3>
                           </td>
                         </tr>
                         <tr>
                           <td colSpan="5" className="text-center">
                             <h3 className="text-xl text-accent-content">
-                              - Order Total: ${ Math.round(order?.subtotal + 50 + (order?.subtotal / 5)) } -
+                              - Order Total: $
+                              {Math.round(
+                                order?.subtotal + 50 + order?.subtotal / 5
+                              )}{" "}
+                              -
                             </h3>
                           </td>
                         </tr>

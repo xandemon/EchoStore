@@ -43,7 +43,7 @@ const ThankYou = () => {
 
   return (
     <>
-      <SectionTitle title="Thank You" path="Home | Cart | Thank you" />
+      {/* <SectionTitle title="Thank You" path="Home | Cart | Thank you" /> */}
       <div className="thankyou-content text-center text-accent-content px-10 max-w-7xl mx-auto">
         <h2 className="text-6xl max-sm:text-4xl">
           Thank you for your purchase!
