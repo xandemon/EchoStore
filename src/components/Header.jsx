@@ -49,6 +49,8 @@ const Header = () => {
     fetchWishlist();
   }, [loginState]);
 
+  console.log({ darkMode });
+
   return (
     <>
       <div className="flex items-center justify-between gap-5 bg-base-100 w-full max-w-7xl mx-auto">
