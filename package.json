@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently \"npm run dev\" \"npm run json\"",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && concurrently \"npm run preview\" \"npm run json\"",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "json": "json-server --watch src/data/db.json --port 8080"
