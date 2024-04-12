@@ -15,7 +15,6 @@ const About = () => {
 At Echostore, we believe that style is more than just what you wear it's a reflection of your unique personality and expression. That's why we curate a carefully selected collection of top-tier brands and sought-after designers, ensuring that you have access to the finest quality apparel and accessories that effortlessly elevate your look.
  We take pride in offering authenticity, quality, and value, ensuring that every purchase you make with us is an investment in both style and satisfaction.
 Thank you for choosing Echostore as your fashion destination.
-
         </p>
         <Link
           to="/contact"
