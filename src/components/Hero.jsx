@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/Hero.css";
 const Hero = () => {
   return (
-    <div className="hero bg-base-200 bg-blend-overlay">
+    <div className="hero bg-base-200 bg-transparent">
       <div className="hero-content text-center">
         <div className="max-w-2xl">
           <h1 className="text-6xl font-bold max-md:text-4xl text-accent-content">
